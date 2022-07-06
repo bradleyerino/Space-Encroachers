@@ -8,26 +8,29 @@
     height: 300px;
     border: solid black;
     display: flex;
+   
     flex-wrap: wrap;
 }
 
 .grid div{
     width: 20px;
     height: 20px;
-
 }
 
 .encroacher{
-background-color: purple;
+background-color: rgb(18, 190, 49);
 border-radius: 10px;
 }
 
 .shooter{
-    background-color: greenyellow;
+    background-color: rgb(205, 85, 151);
+    border-radius: 500px;
+    border-bottom-right-radius: 23px;
+    border-bottom-left-radius: 23px; 
     }
 
 .laser{
-    background-color: darkorange;
+    background-color: rgba(230, 14, 14, 0.668);
 }
 
 .boom{
@@ -35,8 +38,10 @@ border-radius: 10px;
 }
 
 .results{
+    
     display: flex;
-    background-color: blueviolet;
+    background-color: rgb(110, 54, 163);
+    color: rgb(229, 62, 251);
     justify-content: center;
     width: 305px;
 }

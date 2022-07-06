@@ -53,6 +53,7 @@ function moveShooter(e){
                    break;
 
     }
+    
     squares[currentShooterIndex].classList.add('shooter')
 }
 document.addEventListener('keydown', moveShooter)
