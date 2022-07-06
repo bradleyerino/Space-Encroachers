@@ -5,6 +5,8 @@ let width = 15
 let direction = 1
 let encroachersId
 let goingRight = true
+let encroachersRemoved = []
+let results = 0
 
 for(let i = 0; i<225; i++){
     const square = document.createElement('div')
@@ -21,7 +23,10 @@ const alienEncroachers = [
 
 function draw(){
     for(let i = 0; i<alienEncroachers.length; i++){
-        squares[alienEncroachers[i]].classList.add('encroacher')
+        if(!encroachersRemoved.includes(i)){
+            squares[alienEncroachers[i]].classList.add('encroacher')
+        }
+       
     }
 }
 
@@ -90,9 +95,14 @@ function moveEncroachers(){
         }
     }
 
+    if(encroachersRemoved.length===alienEncroachers.length){
+        resultsDisplay.innerHTML = 'YOU WIN'
+        clearInterval(encroachersId)
+    }
+
 }
 
-encroachersId = setInterval(moveEncroachers, 100)
+encroachersId = setInterval(moveEncroachers, 300)
 
 function shoot(e){
     let laserId
@@ -110,6 +120,10 @@ function shoot(e){
             clearInterval(laserId)
 
             const encroacherRemoval = alienEncroachers.indexOf(currentLaserIndex)
+            encroachersRemoved.push(encroacherRemoval)
+            results++
+            resultsDisplay.innerHTML = results
+            console.log(encroacherRemoval)
             
         }
         
